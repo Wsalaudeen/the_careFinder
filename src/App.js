@@ -1,25 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Logo from "./Images/navbar.png";
+import { NavLink } from "react-router-dom";
+// import Hamburger from "hamburger-react";
+import { useState } from "react";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="NavBar">
+      <NavBar />
     </div>
   );
 }
 
-export default App;
+function NavBar() {
+  return (
+    <header className="container">
+      <div className="Logo">
+        <img src={Logo} alt="carefinder_logo" />
+      </div>
+      <nav className="NavBar">
+        <div>
+          <ul className="NavBar_list">
+            <li>
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "#fff" } : { color: "#0000ff" }
+                }
+                className="link"
+                to="/"
+              >
+                Resources
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "#fff" } : { color: "#0000ff" }
+                }
+                className="link"
+                to="/"
+              >
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                style={({ isActive }) =>
+                  isActive ? { color: "#fff" } : { color: "#0000ff" }
+                }
+                className="link"
+                to="/"
+              >
+                Contact Us
+              </NavLink>
+            </li>
+            <button className="btn">Login</button>
+            <button className="btn">Sign up</button>
+          </ul>
+        </div>
+      </nav>
+    </header>
+  );
+}
