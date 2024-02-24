@@ -1,86 +1,261 @@
 @import url("https://fonts.googleapis.com/css2?family=Tajawal&display=swap");
 
+:root {
+  --backgroundColor: #000;
+  --whiteColor: #fff;
+  --blueColor: #206df6;
+  --mainColor: #212121;
+  --headingColor: #e7e7e7;
+  --formColor: #1f1f1f;
+  --anchorColor: #b4b4b4;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgba(0, 0, 0);
   font-family: "Tajawal", sans-serif;
   font-weight: 400;
   font-style: normal;
+  background-color: var(--backgroundColor);
 }
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 80rem;
-  height: 7.5rem;
-  padding: 2.5rem, 2.5rem, 2.5rem, 3.5rem;
-  gap: 39.125rem;
-  margin-inline-start: 2.5rem;
+  margin: 0 auto;
+  max-width: 68.75rem;
+  height: 100%;
+  padding: 0 1rem;
+  /* border: solid red 2px; */
 }
+
+.navbar {
+  height: 3.75rem;
+  background-color: var(--backgroundColor);
+  position: relative;
+}
+
+.navbar-elements ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 0.875rem;
+  padding: 0;
+  margin-block-start: 1rem;
+}
+
+.navbar-elements a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--whiteColor);
+  text-decoration: none;
+}
+
+.navbar-elements a.active {
+  color: var(--blueColor);
+  font-weight: 500;
+  position: relative;
+}
+
+.navbar-elements a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -0.25rem;
+  left: 0;
+  width: 100%;
+  height: 0.125rem;
+  background-color: var(--blueColor);
+}
+
+button {
+  gap: 0.25rem;
+}
+
 .logo {
   width: 15.25rem;
   height: 3.5rem;
 }
-.NavBar {
-  background-color: rgba(0, 0, 0, 1);
-}
 
-.NavBar_list {
+.menu-icon {
+  display: none;
+}
+.navbar-elements ul {
   display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  width: 29.75rem;
-  height: 3rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.navbar-elements li:last-child {
+  margin-inline-end: 3.75rem;
 }
 
-.NavBar_list ul li {
-  list-style: none;
-  margin-inline-end: 0.5rem;
-}
-.NavBar_list ul li:last-child {
-  margin-inline-end: 0;
-}
-
-.link {
-  text-decoration: none;
-  display: flex;
-  text-align: center;
-  align-items: center;
-}
-
-button {
-  gap: 0.5rem;
-}
 .btn {
-  border: 1px solid #206df6;
-  border-radius: 1.5rem;
+  border: 1px solid var(--blueColor);
   background: transparent;
-  color: #fff;
+  color: var(--whiteColor);
   font-family: "Tajawal";
   font-weight: 400;
   line-height: 1.5rem;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
   gap: 0.25rem;
   transition: background-color 0.3 ease;
+  border-radius: 24px;
+  padding: 8px 16px 8px 16px;
 }
 
 .btn:hover {
-  background-color: #206df6;
+  background-color: var(--blueColor);
 }
 
 .btn:focus {
   border-radius: 1.5rem;
-  background: #206df6;
-  outline: 2px solid #206df6;
+  background: var(--blueColor);
+  outline: 2px solid var(--blueColor);
   outline-offset: 1px;
-  color: #fff;
+  color: var(--whiteColor);
+}
+
+@media (max-width: 678px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+    color: var(--blueColor);
+  }
+
+  .navbar-elements {
+    position: absolute;
+    position: fixed;
+    right: 0;
+    top: 48px;
+    background-color: var(--backgroundColor);
+    width: 0;
+    height: calc(100vh - 160px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .navbar-elements.active {
+    position: fixed;
+    width: 15rem;
+  }
+
+  .navbar-elements ul {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar-elements ul li {
+    margin-inline-end: unset;
+    margin-block-start: 0.25rem;
+  }
+
+  .btn {
+    border: 2px solid var(--blueColor);
+    border-radius: 0px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .btn:focus {
+    border-radius: 0px;
+    background: var(--blueColor);
+    outline: 2px solid var(--blueColor);
+    outline-offset: 1px;
+    color: var(--whiteColor);
+  }
+
+  .active-btn {
+    background-color: var(--blueColor);
+  }
+}
+
+.main-page {
+  display: flex;
+  border: none;
+  background-color: var(--backgroundColor);
+  padding-inline-end: 5rem;
+  gap: 2rem;
+  width: 100%;
+}
+
+.map-field {
+  margin-block-start: 8px;
+}
+
+.map-figure {
+  max-width: 100%;
+  height: auto;
+}
+
+.search-field {
+  padding-block-start: 40px;
+  color: var(--headingColor);
+  width: 50%;
+}
+
+.search-field h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+}
+
+.search-field p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 2px;
+}
+
+.search-form {
+  background-color: var(--formColor);
+  padding: 30px 16px;
+  border-radius: 16px;
+}
+
+.search-form label {
+  display: block;
+  margin-block-end: 4px;
+}
+
+.search-input {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.search {
+  display: block;
+  margin-block-end: 4px;
+  border-radius: 24px;
+  border: none;
+  padding: 12px;
+  width: 18rem;
+  background-color: var(--headingColor);
+}
+
+.form-btn {
+  background-color: var(--blueColor);
+  border-radius: 24px;
+  padding: 8px 16px 8px 16px;
+}
+
+.search-form a {
+  font-size: 16px;
+  color: var(--anchorColor);
+  cursor: pointer;
+}
+
+.social-proof {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-start: 4rem;
+  padding-inline-end: 4rem;
+  margin-block-start: 4rem;
+  margin-block-end: 8rem;
 }
