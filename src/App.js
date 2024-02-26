@@ -9,12 +9,19 @@ import youtube from "./Images/YouTube.png";
 import pinterest from "./Images/Pinterest.png";
 import twitch from "./Images/Twitch.png";
 import webflow from "./Images/Webflow - Copy.png";
+import usersimage from "./Images/users-guide-image.png";
+import "./NavBar.css";
+import "./MainPage.css";
+import "./SocialIcons.css";
+import "./UsersGuide.css";
+
 export default function App() {
   return (
     <div className="App">
       <NavBar />
       <MainPage />
-      <SocialProof />
+      <SocialIcons />
+      {/* <UsersGuide /> */}
     </div>
   );
 }
@@ -64,60 +71,82 @@ function MainPage() {
   return (
     <main className="main-page">
       <div className="map-field">
-        <div className="map">
+        <div className="map-figure">
           <iframe
-            id="map-figure"
+            class="map-frame"
             src="https://maps.google.com/maps?width=650&amp;height=500&amp;hl=en&amp;q=Lagos,%20Nigeria+(CareFinder)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
             width="520"
             height="480"
+            role="google map"
           ></iframe>
         </div>
       </div>
       <div className="search-field">
         <h1>Find Hospital Close To Your Residence</h1>
-        <p>
+        <p className="search-field-paragraph">
           Are you in need of getting to know the hospital closer to you? fill
           the form below.
         </p>
         <form className="search-form">
-          <label>Enter your location, a zip code, city or state</label>
-          <div className="search-input">
-            <input
-              className="search"
-              type="text"
-              placeholder="&#xF002; Your location..."
-            />
-            <button className="btn form-btn">Search</button>
+          <div className=" search-form-container">
+            <label>Enter your location, a zip code, city or state</label>
+            <div className="search-input">
+              <input
+                className="search"
+                type="text"
+                placeholder=" Your location..."
+              />
+              <button className="btn form-btn">Search</button>
+            </div>
+            <p>-or</p>
+            <a href="/">Use my location</a>
           </div>
-          <p>- or </p>
-          <a href="/">Use my location</a>
         </form>
       </div>
     </main>
   );
 }
 
-function SocialProof() {
+function SocialIcons() {
   return (
-    <section className="social-proof">
-      <div className="social-logo">
+    <section className="social-media-icons" role="social media icons">
+      <div className="social-icons">
         <img src={google} alt="google" />
       </div>
-      <div className="social-logo">
+      <div className="social-icons">
         <img src={facebook} alt="facebook" />
       </div>
-      <div className="social-logo">
+      <div className="social-icons">
         <img src={youtube} alt="youtube" />
       </div>
-      <div className="social-logo">
+      <div className="social-icons">
         <img src={pinterest} alt="pinterest" />
       </div>
-      <div className="social-logo">
+      <div className="social-icons">
         <img src={twitch} alt="twitch" />
       </div>
-      <div className="social-logo">
+      <div className="social-icons">
         <img src={webflow} alt="webflow" />
       </div>
     </section>
   );
 }
+
+// function UsersGuide() {
+//   return (
+//     <section className="users-guide">
+//       <div className="users-steps-guide">
+//         <h2>The best method of finding quality hospitals in region</h2>
+//         <p>
+//           Our process have been optimized so that you can do this in 3 simple
+//           and straightforward steps
+//         </p>
+//       </div>
+//       <div className="users-guide-image">
+//         <div className="users-image">
+//           <img src={usersimage} alt="a doctor doing  his job" />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }

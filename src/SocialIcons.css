@@ -1,0 +1,22 @@
+.social-media-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  margin-top: 1rem;
+  margin: 0 auto;
+  border: 2px solid red;
+}
+
+.social-icons {
+  cursor: pointer;
+  /* margin-block: 1rem; */
+  border: 2px solid green;
+}
+
+@media (max-width: 820px) {
+  .social-media-icons {
+    flex-direction: column;
+  }
+}
