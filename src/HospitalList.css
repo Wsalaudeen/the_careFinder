@@ -1,0 +1,64 @@
+.hospital-wrapper {
+  background-color: var(--formColor);
+  border-radius: 15px;
+  margin-inline: 1rem;
+  /* opacity: 0.8; */
+}
+
+.hospital-about {
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;
+  word-wrap: break-word;
+  /* margin-block-start: 5rem; */
+  /* border: 2px solid red; */
+}
+
+.hospital-about h1 {
+  font-size: 32px;
+  font-weight: 700;
+  /* padding-block-start: 0.5rem; */
+}
+
+.hospital-about p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hospital-about h1,
+p {
+  color: var(--headingColor);
+}
+
+.hospital-features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-inline: 5rem;
+  /* border: 2px solid green; */
+}
+
+.feature {
+  margin: 0 auto;
+  max-width: 300px;
+  text-align: center;
+  margin-block: 2rem;
+  /* border: 2px solid yellow; */
+}
+.feature h3 {
+  color: var(--headingColor);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.feature-image {
+  display: block;
+  margin: 0.2rem auto;
+}
+.feature-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-block-start: 0.2rem;
+}

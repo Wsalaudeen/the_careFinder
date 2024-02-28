@@ -75,9 +75,11 @@
   }
   .users-steps-guide h2 {
     text-align: center;
+    word-wrap: break-word;
   }
   .users-paragraph {
     text-align: center;
+    word-wrap: break-word;
   }
   .users-button {
     display: flex;
