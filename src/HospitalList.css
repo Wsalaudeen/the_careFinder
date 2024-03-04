@@ -15,7 +15,7 @@
   text-align: center;
   word-wrap: break-word;
   margin-block-end: 5rem;
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .hospital-about h1 {
@@ -39,7 +39,7 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   /* padding-inline: 5rem; */
-  border: 2px solid green;
+  /* border: 2px solid green; */
 }
 
 .feature {
@@ -47,7 +47,7 @@ p {
   max-width: 300px;
   text-align: center;
   margin-block: 2rem;
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
 }
 .feature h3 {
   color: var(--headingColor);
