@@ -1,8 +1,5 @@
 import "./App.css";
-import Logo from "./Images/navbar.png";
-import { NavLink } from "react-router-dom";
-import Hamburger from "hamburger-react";
-import { useState } from "react";
+
 import google from "./Images/Google.png";
 import facebook from "./Images/Facebook.png";
 import youtube from "./Images/YouTube.png";
@@ -13,7 +10,6 @@ import usersimage from "./Images/users-guide-image.png";
 import signup from "./Images/sign-up.png";
 import account from "./Images/account.png";
 import hospital from "./Images/hospital.png";
-import "./NavBar.css";
 import "./MainPage.css";
 import "./SocialIcons.css";
 import "./UsersGuide.css";
@@ -60,7 +56,7 @@ const InitialFriends = [
 export default function App() {
   return (
     <div className="App">
-      <NavBar />
+      {/* <NavBar /> */}
       <MainPage />
       <SocialIcons />
       <UsersGuide />
@@ -68,47 +64,6 @@ export default function App() {
       <Users />
       <Footer />
     </div>
-  );
-}
-
-function NavBar() {
-  const [showNavbar, setShowNavbar] = useState(false);
-
-  const handleShowNavbar = () => {
-    setShowNavbar(!showNavbar);
-  };
-  return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="logo">
-          <img src={Logo} alt="carefinder_logo" />
-        </div>
-
-        <div
-          className="menu-icon"
-          onClick={handleShowNavbar}
-          aria-label="Hamburger menu"
-          role="Toggle menu"
-        >
-          <Hamburger />
-        </div>
-        <div className={`navbar-elements  ${showNavbar ? "active" : ""}`}>
-          <ul>
-            <li>
-              <NavLink to="/resources">Resources</NavLink>
-            </li>
-            <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact us">Contact Us</NavLink>
-            </li>
-            <button className="btn active-btn">Login</button>
-            <button className="btn active-btn form-btn">Sign Up</button>
-          </ul>
-        </div>
-      </div>
-    </nav>
   );
 }
 
@@ -362,7 +317,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-logo">
-        <img src={Logo} alt="CareFinder Logo" />
+        {/* <img src={Logo} alt="CareFinder Logo" /> */}
       </div>
       <div className="footer-extras">
         <div className="footer-extra">
