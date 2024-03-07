@@ -6,6 +6,7 @@ import UsersGuide from "./components/UsersGuide/UsersGuide";
 import HospitalLists from "./components/HospitalLists/HospitalLists";
 import Users from "./components/Users/Users";
 import Footer from "./components/Footer/Footer";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 export default function App() {
   return (
@@ -17,6 +18,17 @@ export default function App() {
       <HospitalLists />
       <Users />
       <Footer />
+
+      <Main>
+        <BrowserRouter>
+          <Routes>
+            <Route />
+            <Route />
+            <Route />
+            <Route />
+          </Routes>
+        </BrowserRouter>
+      </Main>
     </div>
   );
 }
