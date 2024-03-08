@@ -37,7 +37,9 @@ function NavBar() {
               <NavLink to="/contact us">Contact Us</NavLink>
             </li>
             <button className="btn active-btn">Login</button>
-            <button className="btn active-btn form-btn">Sign Up</button>
+            <NavLink to="/sign-up">
+              <button className="btn active-btn form-btn">Sign Up</button>
+            </NavLink>
           </ul>
         </div>
       </div>
