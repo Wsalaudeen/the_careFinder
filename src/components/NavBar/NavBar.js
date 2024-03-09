@@ -12,7 +12,7 @@ function NavBar() {
   };
   return (
     <nav className="navbar">
-      <div className="container">
+      <div className="navbar-container">
         <div className="logo">
           <img src={Logo} alt="carefinder_logo" />
         </div>
