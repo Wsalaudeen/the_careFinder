@@ -5,6 +5,7 @@ import UsersGuide from "../UsersGuide/UsersGuide";
 import HospitalLists from "../HospitalLists/HospitalLists";
 import Users from "../Users/Users";
 import Footer from "../Footer/Footer";
+import { NavLink } from "react-router-dom";
 
 export default function MainPage() {
   return (
@@ -37,7 +38,9 @@ export default function MainPage() {
                   type="text"
                   placeholder=" Your location..."
                 />
-                <button className="btn form-btn">Search</button>
+                <NavLink to="/hospital-main-page">
+                  <button className="btn form-btn">Search</button>
+                </NavLink>
               </div>
               <p>-or</p>
               <a href="/">Use my location</a>

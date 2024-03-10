@@ -2,10 +2,12 @@ import "./SignUpForm.css";
 import logo from "../../Images/navbar_bar.png";
 import { FaFacebook, FaGoogle, FaApple } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import NavBar from "../../components/NavBar/NavBar";
 
 export default function SignUpForm() {
   return (
     <section>
+      {/* <NavBar /> */}
       <div className="sign-up-logo">
         <img src={logo} alt="careFinder" className="sign-up-image" />
       </div>
@@ -20,6 +22,7 @@ export default function SignUpForm() {
         </div>
         <button className="sign-up-btn">Sign-Up</button>
         <p>Or sign up with </p>
+
         <span className="sign-up-social-icons">
           <FaFacebook />
           <FaGoogle />
