@@ -38,7 +38,7 @@ export default function MainPage() {
                   type="text"
                   placeholder=" Your location..."
                 />
-                <NavLink to="/hospital-main-page">
+                <NavLink to="/hospital-list">
                   <button className="btn form-btn">Search</button>
                 </NavLink>
               </div>
