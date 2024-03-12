@@ -1,0 +1,68 @@
+.hospital-list-number {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.hospital-list-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hospital-list-filter,
+.hospital-list-share,
+.hospital-list-download {
+  background-color: transparent;
+  cursor: pointer;
+  color: var(--headingColor);
+  border: 1px solid transparent;
+  transition: border-color 1s ease-in;
+}
+
+.hospital-detail-container {
+  display: flex;
+  max-width: 1100px;
+  height: 200px;
+  margin-block-end: 1rem;
+  border: 1px solid red;
+}
+
+.hospital-detail-image {
+  height: inherit;
+  width: 30%;
+  border: 2px dashed green;
+}
+
+.hospital-image {
+  height: 99%;
+  width: 210px;
+  border-radius: 5px;
+}
+
+.hospital-details {
+  display: flex;
+  flex-direction: column;
+  padding-inline-start: 10px;
+  width: 70%;
+  border: 2px solid yellow;
+}
+
+.hospital-detail-name {
+  width: fit-content;
+  color: var(--headingColor);
+  font-weight: 500;
+  margin-block-end: 1rem;
+}
+
+.hosiptal-detail-info {
+  text-wrap: balance;
+  max-width: 700px;
+  margin-block-end: 2rem;
+}
+
+.hospital-detail-socials {
+  display: flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  margin-block-end: -8rem;
+}
