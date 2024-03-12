@@ -21,17 +21,26 @@ export default function HospitalDetail({ hospitalsData }) {
           </p>
           <span className="hospital-detail-socials">
             {hospitalsData.hospitalSocials.instagram && (
-              <a href={hospitalsData.hospitalSocials.instagram}>
+              <a
+                href={hospitalsData.hospitalSocials.instagram}
+                className="social-icons"
+              >
                 <FaInstagram />
               </a>
             )}
             {hospitalsData.hospitalSocials.email && (
-              <a href={hospitalsData.hospitalSocials.email}>
+              <a
+                href={hospitalsData.hospitalSocials.email}
+                className="social-icons"
+              >
                 <FaEnvelope />
               </a>
             )}
             {hospitalsData.hospitalSocials.linkedin && (
-              <a href={hospitalsData.hospitalSocials.linkedin}>
+              <a
+                href={hospitalsData.hospitalSocials.linkedin}
+                className="social-icons"
+              >
                 <FaLinkedin />
               </a>
             )}
