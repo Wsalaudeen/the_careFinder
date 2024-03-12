@@ -16,7 +16,7 @@ export default function HospitalDetail({ hospitalsData }) {
           <h3 className="hospital-detail-name">{hospitalsData.hospitalName}</h3>
           <p className="hospital-detail-info">{hospitalsData.hospitalInfo}</p>
           <p className="hospital-detail-proximity">
-            <span>🏃</span>
+            <span className="hospital-detail-span">🏃</span>
             {hospitalsData.hospitalProximity}
           </p>
           <span className="hospital-detail-socials">

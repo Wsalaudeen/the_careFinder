@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { hospitalDetails } from "../../Data/HospitalDetails";
 import HospitalDetail from "./HospitalDetail";
 import "./HospitalList.css";
+import Pagination from "./Pagination";
 
 export default function Hospitalist() {
   const [hospitalListPerPage] = useState(3);
@@ -24,8 +25,7 @@ export default function Hospitalist() {
       <div className="hospital-list-container">
         <div className="hospital-list-number">
           <p>
-            <span>20</span>
-            facilities found
+            <span>20</span>&nbsp; facilities found
           </p>
         </div>
         <div className="hospital-list-icons">
@@ -39,6 +39,18 @@ export default function Hospitalist() {
           <HospitalDetail hospitalsData={hospital} key={hospital.id} />
         ))}
       </ul>
+      <Pagination
+        disabledPrev={page === 1}
+        disabledNext={indexOfLastHospital === hospitalDetails.length}
+        page={page}
+        setPage={setPage}
+        indexOfLastHospital={indexOfLastHospital}
+      />
+      <span>
+        <NavLink to="/" className="homepage">
+          &larr;
+        </NavLink>
+      </span>
       <Footer />
     </>
   );
