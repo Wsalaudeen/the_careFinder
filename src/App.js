@@ -1,11 +1,11 @@
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
 import MainPage from "./components/MainPage/MainPage";
 import SignUpForm from "./Pages/SignUpForm/SignUpForm";
 import HospitalList from "./Pages/Hospitalist/HospitalList";
-// import HospitalMainPage from "./Pages/HospitalMainPage/HospitalMainPage";
+import MarkDown from "./Pages/MarkDown/MarkDown";
 
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import NavBar from "./components/NavBar/NavBar";
 
 export default function App() {
   return (
@@ -14,8 +14,8 @@ export default function App() {
         <Routes>
           <Route index element={<MainPage />} />
           <Route path="sign-up" element={<SignUpForm />} />
+          <Route path="mark-down" element={<MarkDown />} />
           <Route path="hospital-list" element={<HospitalList />} />
-          <Route />
         </Routes>
       </BrowserRouter>
     </div>

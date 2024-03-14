@@ -36,7 +36,9 @@ function NavBar() {
             <li>
               <NavLink to="/contact us">Contact Us</NavLink>
             </li>
-            <button className="btn active-btn">Login</button>
+            <NavLink to="/mark-down">
+              <button className="btn active-btn">Login</button>
+            </NavLink>
             <NavLink to="/sign-up">
               <button className="btn active-btn form-btn">Sign Up</button>
             </NavLink>
