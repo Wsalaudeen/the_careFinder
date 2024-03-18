@@ -1,0 +1,26 @@
+.oauth {
+  background-color: transparent;
+  color: var(--headingColor);
+  border: 1px solid var(--blueColor);
+  padding: 8px 10px;
+  font-family: "Tajawal";
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 70%;
+}
+.oauth:hover {
+  border: 1px solid var(--headingColor);
+}
+
+.google {
+  font-size: 24px;
+}
+@media (max-width: 820px) {
+  .oauth {
+    width: 50%;
+  }
+}

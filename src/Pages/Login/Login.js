@@ -1,18 +1,17 @@
-import "./SignUpForm.css";
+import "./Login.css";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import Oauth from "../../components/Oauth/Oauth";
 
-export default function SignUpForm() {
+export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
-    name: "",
     email: "",
     password: "",
   });
-  const { name, email, password } = formData;
-  function onChange(e) {
+  const { email, password } = formData;
+  function handleOnChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
@@ -25,23 +24,15 @@ export default function SignUpForm() {
   return (
     <section>
       <div className="sign-up-form">
-        <h1> Create Account</h1>
-        <p>Sign up to get search for hospitals near you super fast!</p>
+        <h1>Login Here</h1>
         <div className="sign-up-input">
           <form>
-            <input
-              type="text"
-              id="name"
-              placeholder="&#937; Full Name"
-              value={name}
-              onChange={onChange}
-            />
             <input
               type="email"
               id="email"
               placeholder="&#9993; Email"
               value={email}
-              onChange={onChange}
+              onChange={handleOnChange}
             />
             <div className="password-input">
               <input
@@ -49,7 +40,7 @@ export default function SignUpForm() {
                 placeholder="&#42;&#42;&#42; Password"
                 id="password"
                 value={password}
-                onChange={onChange}
+                onChange={handleOnChange}
               />
               <span className="show-password-icons">
                 {showPassword ? (
@@ -67,9 +58,9 @@ export default function SignUpForm() {
             </div>
             <div className="account">
               <p className="account-login">
-                Have an account?{" "}
-                <Link to="/log-in" className="login-css">
-                  Login
+                Don't you have an account?{" "}
+                <Link to="/sign-up" className="login-css">
+                  Register
                 </Link>
               </p>
               <p className="account-forgot">
@@ -79,8 +70,8 @@ export default function SignUpForm() {
               </p>
             </div>
 
-            <button className="sign-up-btn">Sign-Up</button>
-            <p>Or sign up with </p>
+            <button className="sign-up-btn">login</button>
+            <p>Or login with </p>
             <Oauth />
           </form>
         </div>

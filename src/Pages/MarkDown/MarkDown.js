@@ -7,11 +7,12 @@ function MarkDown() {
     <>
       <NavBar />
       <div className="markdown-container">
+        <p className="markdown-paragraph">Home/List Hospitals</p>
         <header className="markdown-header">
           <h2>List Hospital</h2>
-          <p>
-            Use the markdown to fill required sections before submitting.As soon
-            as we aapprove your hospital would appear in search result
+          <p className="markdown-header-paragraph">
+            Use the markdown to fill required sections before submitting as soon
+            as we approve <br></br> your hospital would appear in search result
           </p>
         </header>
         <div className="markdown-wrapper">

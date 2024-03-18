@@ -16,7 +16,7 @@ export default function MainPage() {
           <div className="map-figure">
             <iframe
               class="map-frame"
-              src="https://maps.google.com/maps?width=650&amp;height=500&amp;hl=en&amp;q=Lagos,%20Nigeria+(CareFinder)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              src="https://maps.google.com/maps?width=650&amp;height=500&amp;hl=en&amp;q=Ibadan,%20Nigeria+(CareFinder)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               width="520"
               height="480"
               role="google map"

@@ -1,12 +1,11 @@
 body {
   margin: 0;
+  /* padding: 0; */
   box-sizing: border-box;
 }
-.sign-up-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
+
+a {
+  text-decoration: none;
 }
 
 h1 {
@@ -14,6 +13,8 @@ h1 {
   font-size: 36px;
   font-weight: 600;
   font-family: "Tajawal";
+  /* border: 2px solid green; */
+  margin-top: 40px;
 }
 .sign-up-form {
   margin: 0 auto;
@@ -23,11 +24,9 @@ h1 {
 }
 
 .sign-up-form p {
-  margin-block-end: 1rem;
   word-wrap: break-word;
 }
 .sign-up-input {
-  height: fit-content;
   width: 100%;
 }
 .sign-up-input input {
@@ -36,10 +35,8 @@ h1 {
   width: 70%;
   height: 40px;
   padding-inline-start: 20px;
-  border-radius: 25px;
   border: none;
   outline: none;
-  resize: vertical;
   align-items: center;
   margin-block-end: 1rem;
 }
@@ -49,29 +46,53 @@ input::placeholder {
   font-family: "Tajawal";
 }
 
+.password-input {
+  position: relative;
+  /* border: 2px solid pink; */
+}
+.show-password-icons {
+  position: absolute;
+  top: 25%;
+  margin-left: -40px;
+}
+.password-icon {
+  color: var(--headingColor);
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.account {
+  /* border: 2px solid yellow; */
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 16px;
+}
+.login-css {
+  font-size: 18px;
+  color: var(--blueColor);
+}
+
+.forgot-css {
+  font-size: 18px;
+  color: var(--blueColor);
+}
+
 .sign-up-btn {
   width: 70%;
   height: 40px;
-  border-radius: 25px;
   border: none;
   cursor: pointer;
-  background-color: var(--blueColor);
+  background-color: transparent;
   color: var(--headingColor);
+  border: 1px solid var(--blueColor);
   margin-block-end: 1rem;
 }
 .sign-up-btn:hover {
   background-color: transparent;
-  border: 1px solid var(--blueColor);
+  border: 1px solid var(--headingColor);
 }
 
-.sign-up-social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  cursor: pointer;
-  margin-block-end: 1rem;
-  color: var(--headingColor);
-}
 .homepage {
   text-decoration: none;
   font-size: 2rem;
@@ -86,14 +107,13 @@ input::placeholder {
   }
   .sign-up-btn {
     width: 50%;
-    border-radius: 0;
   }
   .sign-up-form p {
     word-wrap: break-word;
   }
 
   input::placeholder {
-    font-size: 20px;
+    font-size: 16px;
     font-family: "Tajawal";
   }
 }
