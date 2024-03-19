@@ -7,8 +7,8 @@ import { db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 
 export default function Oauth() {
+  const navigate = useNavigate();
   async function handleGoogleClick() {
-    const navigate = useNavigate();
     try {
       const auth = getAuth();
       const provider = new GoogleAuthProvider();

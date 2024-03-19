@@ -1,8 +1,10 @@
 import "./Login.css";
 import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Oauth from "../../components/Oauth/Oauth";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,6 +13,7 @@ export default function Login() {
     password: "",
   });
   const { email, password } = formData;
+  const navigate = useNavigate();
   function handleOnChange(e) {
     setFormData((prevState) => ({
       ...prevState,
@@ -21,12 +24,29 @@ export default function Login() {
   function handleOnClick() {
     setShowPassword((prevState) => !prevState);
   }
+  async function handleOnSubmit(e) {
+    e.preventDefault();
+    try {
+      const auth = getAuth();
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      if (userCredential.user) {
+        toast.success("Login was succesful!!");
+        navigate("/");
+      }
+    } catch (error) {
+      toast.error("Bad user credentials");
+    }
+  }
   return (
     <section>
       <div className="sign-up-form">
         <h1>Login Here</h1>
         <div className="sign-up-input">
-          <form>
+          <form onSubmit={handleOnSubmit}>
             <input
               type="email"
               id="email"
