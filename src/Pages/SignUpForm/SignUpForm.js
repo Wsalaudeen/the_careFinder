@@ -3,6 +3,15 @@ import { AiFillEyeInvisible, AiFillEye } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
 import Oauth from "../../components/Oauth/Oauth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { db } from "../../firebase";
+import { doc, serverTimestamp, setDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export default function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false);
@@ -11,12 +20,40 @@ export default function SignUpForm() {
     email: "",
     password: "",
   });
+
   const { name, email, password } = formData;
-  function onChange(e) {
+  const navigate = useNavigate();
+
+  function handleOnChange(e) {
     setFormData((prevState) => ({
       ...prevState,
       [e.target.id]: e.target.value,
     }));
+  }
+
+  async function handleOnSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const auth = getAuth();
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+      const user = userCredential.user;
+      const formDataCopy = { ...formData };
+      delete formDataCopy.password;
+      formDataCopy.timestamp = serverTimestamp();
+      await setDoc(doc(db, "users", user.uid), formDataCopy);
+      toast.success("sign up was succesful!!");
+      navigate("/");
+    } catch (error) {
+      toast.error("something went wrong with the registration");
+    }
   }
 
   function handleOnClick() {
@@ -28,20 +65,20 @@ export default function SignUpForm() {
         <h1> Create Account</h1>
         <p>Sign up to get search for hospitals near you super fast!</p>
         <div className="sign-up-input">
-          <form>
+          <form onSubmit={handleOnSubmit}>
             <input
               type="text"
               id="name"
               placeholder="&#937; Full Name"
               value={name}
-              onChange={onChange}
+              onChange={handleOnChange}
             />
             <input
               type="email"
               id="email"
               placeholder="&#9993; Email"
               value={email}
-              onChange={onChange}
+              onChange={handleOnChange}
             />
             <div className="password-input">
               <input
@@ -49,7 +86,7 @@ export default function SignUpForm() {
                 placeholder="&#42;&#42;&#42; Password"
                 id="password"
                 value={password}
-                onChange={onChange}
+                onChange={handleOnChange}
               />
               <span className="show-password-icons">
                 {showPassword ? (

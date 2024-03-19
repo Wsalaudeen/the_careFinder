@@ -7,10 +7,12 @@ import Login from "./Pages/Login/Login";
 import Forgot from "./Pages/Forgot/Forgot";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   return (
-    <div>
+    <>
       <BrowserRouter>
         <Routes>
           <Route index element={<MainPage />} />
@@ -21,6 +23,19 @@ export default function App() {
           <Route path="/forgot-password" element={<Forgot />} />
         </Routes>
       </BrowserRouter>
-    </div>
+
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+    </>
   );
 }
