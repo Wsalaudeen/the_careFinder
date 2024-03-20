@@ -1,0 +1,35 @@
+.profile {
+  margin: 0 auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.profile-input {
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  background-color: var(--formColor);
+  color: var(--headingColor);
+  width: 70%;
+  margin-block: 5px;
+}
+.profile-input-wrapper {
+  /* border: 2px solid red; */
+}
+
+.profile-paragraph {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  font-size: 18px;
+  /* border: 2px solid blue; */
+}
+
+.profile-span {
+  color: var(--blueColor);
+  cursor: pointer;
+}
+.profile-out {
+  color: var(--blueColor);
+  cursor: pointer;
+}
