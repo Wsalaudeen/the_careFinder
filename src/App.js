@@ -2,7 +2,7 @@ import "./App.css";
 import MainPage from "./components/MainPage/MainPage";
 import SignUpForm from "./Pages/SignUpForm/SignUpForm";
 import HospitalList from "./Pages/Hospitalist/HospitalList";
-import MarkDown from "./Pages/MarkDown/MarkDown";
+import AddHospitals from "./Pages/AddHospitals/AddHospitals";
 import Login from "./Pages/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
@@ -20,7 +20,7 @@ export default function App() {
         <Routes>
           <Route index element={<MainPage />} />
           <Route path="sign-up" element={<SignUpForm />} />
-          <Route path="mark-down" element={<MarkDown />} />
+          <Route path="add-hospitals" element={<AddHospitals />} />
           <Route path="hospital-list" element={<HospitalList />} />
           <Route path="/log-in" element={<Login />} />
           <Route path="/forgot-password" element={<Forgot />} />

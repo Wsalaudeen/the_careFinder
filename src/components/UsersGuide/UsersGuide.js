@@ -1,5 +1,6 @@
 import usersimage from "./users-guide-image.png";
 import "./UsersGuide.css";
+import { NavLink } from "react-router-dom";
 
 function UsersGuide() {
   return (
@@ -53,7 +54,9 @@ function UsersGuide() {
           </div>
         </div>
         <div className="users-button">
-          <button className="btn form-btn">Try it now &rarr;</button>
+          <NavLink to="/sign-up">
+            <button className="btn form-btn">Try it now &rarr;</button>
+          </NavLink>
         </div>
       </div>
       <div className="users-guide-image">

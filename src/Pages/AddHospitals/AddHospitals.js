@@ -1,8 +1,8 @@
 import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import { FaPen } from "react-icons/fa";
-import "./MarkDown.css";
-function MarkDown() {
+import "./AddHospitals.css";
+function AddHospitals() {
   return (
     <>
       <NavBar />
@@ -63,4 +63,4 @@ function MarkDown() {
   );
 }
 
-export default MarkDown;
+export default AddHospitals;
