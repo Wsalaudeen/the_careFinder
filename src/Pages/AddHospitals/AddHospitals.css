@@ -1,26 +1,128 @@
 h2 {
   color: var(--headingColor);
-  font-weight: 700;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 32px;
   /* border: 2px solid yellow; */
   margin-block: 5px;
 }
+.addhospitals-container {
+  padding-top: 80px;
+}
 
-.markdown-header-paragraph {
+.addhospitals-header-paragraph {
   margin-top: 5px;
   /* border: 2px solid green; */
 }
 
-.markdown-paragraph {
+.addhospitals-paragraph {
   color: var(--anchorColor);
   font-size: 12px;
-  /* border: 2px solid green; */
   padding-left: 40px;
 }
-.markdown-header {
+.addhospitals-header {
   /* border: 2px solid red; */
   padding-left: 40px;
 }
-.markdown-wrapper {
+.addhospitals-wrapper {
   background-color: var(--formColor);
+  /* border: 2px solid red; */
+}
+
+.addhospitals-header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 40px;
+  /* border: 2px solid green; */
+}
+
+.addhospitals-edit {
+  font-size: 18px;
+}
+
+.addhospitals-button {
+  /* display: block; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addhospitals-button button {
+  margin-right: 10px;
+}
+
+.button {
+  border: none;
+  padding: 8px 10px;
+  border-radius: 10px;
+  font-family: "Tajawal";
+  font-size: 16px;
+  color: var(--headingColor);
+  cursor: pointer;
+}
+
+.draft-btn {
+  background-color: transparent;
+  border: 2px solid var(--blueColor);
+}
+
+.draft-btn:hover {
+  background-color: var(--blueColor);
+}
+
+.public-btn {
+  background-color: var(--blueColor);
+}
+.public-btn:hover {
+  background-color: transparent;
+  border: 2px solid var(--blueColor);
+}
+
+.addhospitals-details {
+  margin: 5px;
+  border: 1px solid var(--anchorColor);
+}
+
+.addhospitals-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin-inline-start: 40px;
+  margin-block: 20px;
+}
+label {
+  display: block;
+  color: var(--headingColor);
+  margin-block-end: 5px;
+  font-size: 18px;
+  font-weight: 500;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border: 0.5px solid var(--anchorColor);
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 12px 20px;
+  outline: none;
+}
+input::placeholder {
+  color: var(--anchorColor);
+  font-family: "Tajawal";
+  font-size: 16px;
+  opacity: 0.7;
+  outline: none;
+}
+
+textarea::placeholder {
+  font-size: 20px;
+}
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 0.5px solid var(--anchorColor);
+  border-radius: 5px;
+  background-color: transparent;
 }

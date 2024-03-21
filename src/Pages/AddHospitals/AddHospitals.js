@@ -6,54 +6,56 @@ function AddHospitals() {
   return (
     <>
       <NavBar />
-      <div className="markdown-container">
-        <p className="markdown-paragraph">Home/List Hospitals</p>
-        <header className="markdown-header">
+      <div className="addhospitals-container">
+        <p className="addhospitals-paragraph">Home/List Hospitals</p>
+        <header className="addhospitals-header">
           <h2>List Hospital</h2>
-          <p className="markdown-header-paragraph">
+          <p className="addhospitals-header-paragraph">
             Use the markdown to fill required sections before submitting as soon
             as we approve <br></br> your hospital would appear in search result
           </p>
         </header>
-        <div className="markdown-wrapper">
-          <main>
-            <p className="markdown-edit">
-              Edit text
-              <span>
+        <div className="addhospitals-wrapper">
+          <main className="addhospitals-header-wrapper">
+            <p className="addhospitals-edit">
+              Edit text &nbsp;{" "}
+              <span className="addhospitals-span">
                 <FaPen />
               </span>
             </p>
-            <span className="markdown-button">
-              <button className="draft-btn">Save as draft</button>
-              <button className="public-btn">Post to public</button>
+            <span className="addhospitals-button">
+              <button className="button draft-btn">Save as draft</button>
+              <button className="button public-btn">Post to public</button>
             </span>
           </main>
-          <div className="markdown-details">
-            <form className="markdown-form">
-              <div>
-                <label className="name">Name of hospital</label>
-                <input
-                  type="text"
-                  placeholder="Type Here..."
-                  className="markdown-input"
-                />
-              </div>
-              <div>
-                <label className="number">Phone Number</label>
-                <input
-                  type="number"
-                  placeholder="Type Here..."
-                  className="markdown-input"
-                />
-              </div>
-              <div>
-                <label className="email">Company Email</label>
-                <input
-                  type="email"
-                  placeholder="Type Here..."
-                  className="markdown-input"
-                />
-              </div>
+          <div className="addhospitals-details">
+            <form className="addhospitals-form">
+              <label className="name">Name of hospital</label>
+              <input
+                type="text"
+                placeholder="type here..."
+                className="addhospitals-input"
+              />
+              <label className="number">Phone Number</label>
+              <input
+                type="number"
+                placeholder="type here..."
+                className="addhospitals-input"
+              />
+
+              <label className="email">Company Email</label>
+              <input
+                type="email"
+                placeholder="type here..."
+                className="addhospitals-input"
+              />
+              <label className="textarea">Write a short bio:</label>
+              <textarea
+                rows="4"
+                cols="30"
+                type="text"
+                placeholder=" Write a short bio for your facility here.."
+              ></textarea>
             </form>
           </div>
         </div>
