@@ -1,15 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "./navbar_bar.png";
 import { NavLink } from "react-router-dom";
 import Hamburger from "hamburger-react";
 import "./NavBar.css";
+import { useNavigate, useLocation } from "react-router-dom";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 function NavBar() {
   const [showNavbar, setShowNavbar] = useState(false);
+  const [pageState, setPageState] = useState("Login");
+  const auth = getAuth();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setPageState("Profile");
+      } else {
+        setPageState("Login");
+      }
+    });
+  }, [auth]);
 
   const handleShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
+
+  const location = useLocation();
+  const navigate = useNavigate();
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -36,8 +53,8 @@ function NavBar() {
             <li>
               <NavLink to="/contact-us">Contact Us</NavLink>
             </li>
-            <NavLink to="/log-in">
-              <button className="btn active-btn">Login</button>
+            <NavLink to="/profile">
+              <button className="btn active-btn">{pageState}</button>
             </NavLink>
             <NavLink to="/sign-up">
               <button className="btn active-btn form-btn">Sign Up</button>

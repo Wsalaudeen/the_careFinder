@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase";
+import NavBar from "../../components/NavBar/NavBar";
 
 export default function Profile() {
   const auth = getAuth();
@@ -48,6 +49,7 @@ export default function Profile() {
 
   return (
     <>
+      <NavBar />
       <section className="profile">
         <h1 className="profile-heading">My Profile</h1>
         <div className="profile-input-wrapper">
