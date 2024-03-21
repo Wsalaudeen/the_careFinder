@@ -33,3 +33,13 @@
   color: var(--blueColor);
   cursor: pointer;
 }
+
+.profile-red {
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  background-color: var(--blueColor);
+  color: var(--headingColor);
+  width: 70%;
+  margin-block: 5px;
+}
