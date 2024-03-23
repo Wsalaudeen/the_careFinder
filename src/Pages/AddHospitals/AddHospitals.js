@@ -1,19 +1,17 @@
-import NavBar from "../../components/NavBar/NavBar";
-import Footer from "../../components/Footer/Footer";
 import { FaPen } from "react-icons/fa";
 import "./AddHospitals.css";
 function AddHospitals() {
   return (
     <>
-      <NavBar />
       <div className="addhospitals-container">
-        <p className="addhospitals-paragraph">Home/List Hospitals</p>
+        {/* <h1 className="addhospitals-container-header">Markdown</h1> */}
+        {/* <p className="addhospitals-paragraph">Home/List Hospitals</p> */}
         <header className="addhospitals-header">
-          <h2>List Hospital</h2>
-          <p className="addhospitals-header-paragraph">
+          <h1>List Hospital</h1>
+          {/* <p className="addhospitals-header-paragraph">
             Use the markdown to fill required sections before submitting as soon
             as we approve <br></br> your hospital would appear in search result
-          </p>
+          </p> */}
         </header>
         <div className="addhospitals-wrapper">
           <main className="addhospitals-header-wrapper">
@@ -24,8 +22,8 @@ function AddHospitals() {
               </span>
             </p>
             <span className="addhospitals-button">
-              <button className="button draft-btn">Save as draft</button>
-              <button className="button public-btn">Post to public</button>
+              <button className="button draft">Save as draft</button>
+              <button className="button public">Post to public</button>
             </span>
           </main>
           <div className="addhospitals-details">
@@ -51,7 +49,8 @@ function AddHospitals() {
               />
               <label className="textarea">Write a short bio:</label>
               <textarea
-                rows="4"
+                className="textarea"
+                rows="10"
                 cols="30"
                 type="text"
                 placeholder=" Write a short bio for your facility here.."
@@ -60,7 +59,6 @@ function AddHospitals() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
