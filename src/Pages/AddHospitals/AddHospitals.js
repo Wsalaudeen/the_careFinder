@@ -1,6 +1,12 @@
 import { FaPen } from "react-icons/fa";
 import "./AddHospitals.css";
+import { useState } from "react";
+import { Remarkable } from "remarkable";
+
+const md = new Remarkable();
+
 function AddHospitals() {
+  const [markdowntext, setMarkdowntext] = useState("");
   return (
     <>
       <div className="addhospitals-container">
@@ -50,11 +56,30 @@ function AddHospitals() {
               <label className="textarea">Write a short bio:</label>
               <textarea
                 className="textarea"
+                id="markdown"
+                name="markdown"
                 rows="10"
                 cols="30"
                 type="text"
-                placeholder=" Write a short bio for your facility here.."
+                value={markdowntext}
+                onChange={(e) => setMarkdowntext(e.target.value)}
+                placeholder="How to use Markdown
+          Heading 1	#
+          Heading 2	##
+          Heading 3	###
+          Italics	*italics*
+          Bold	**Bold**
+          Strike	~~insert text~~
+          Block quote	>
+          Links	[link name](link.com)
+          Unordered list	* List item * List item
+          Code Block	`insert code here`"
               ></textarea>
+
+              <div
+                className="markdown-result"
+                dangerouslySetInnerHTML={{ __html: md.render(markdowntext) }}
+              ></div>
             </form>
           </div>
         </div>

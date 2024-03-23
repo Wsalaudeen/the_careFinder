@@ -142,5 +142,24 @@ input::placeholder {
   opacity: 0.7;
 }
 
+.markdown-result {
+  color: var(--headingColor);
+}
+
+.markdown-result h1 {
+  font-size: 36px;
+}
+.markdown-result h2 {
+  font-size: 32px;
+}
+
+.markdown-result h3 {
+  font-size: 28px;
+}
+
+.markdown-result h4 {
+  font-size: 24px;
+}
+
 @media (max-width: 820px) {
 }
