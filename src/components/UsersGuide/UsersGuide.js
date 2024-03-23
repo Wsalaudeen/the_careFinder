@@ -54,7 +54,7 @@ function UsersGuide() {
           </div>
         </div>
         <div className="users-button">
-          <NavLink to="/add-hospitals">
+          <NavLink to="/sign-up">
             <button className="btn form-btn">Try it now &rarr;</button>
           </NavLink>
         </div>
