@@ -3,8 +3,8 @@ import { Reviewer } from "./Reviewer";
 
 const InitialFriends = [
   {
-    id: 933372,
-    userName: "Sarah",
+    id: 933349,
+    userName: "Ayo",
     userImage:
       "https://media.istockphoto.com/id/1432249453/photo/a-male-programmer-shows-a-female-colleague-a-coding-technique-the-codes-are-visible-on-the.jpg?s=612x612&w=is&k=20&c=vmc95VMacoArLbStnKZ2MLGIG3co7mu1ICkSf1xMSn4=",
     userComment:
@@ -12,8 +12,8 @@ const InitialFriends = [
   },
 
   {
-    id: 938372,
-    userName: "Sarah",
+    id: 938373,
+    userName: "lanre",
     userImage:
       "https://media.istockphoto.com/id/1432249453/photo/a-male-programmer-shows-a-female-colleague-a-coding-technique-the-codes-are-visible-on-the.jpg?s=612x612&w=is&k=20&c=vmc95VMacoArLbStnKZ2MLGIG3co7mu1ICkSf1xMSn4=",
     userComment:

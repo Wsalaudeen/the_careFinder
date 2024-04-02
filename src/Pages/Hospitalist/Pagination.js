@@ -7,6 +7,7 @@ const Pagination = ({
   page,
   setPage,
   indexOfLastHospital,
+  searchResult,
 }) => {
   const pagination = (pageNumber) => {
     setPage(pageNumber);
@@ -19,16 +20,16 @@ const Pagination = ({
         onClick={() => pagination(page - 1)}
         className="pagination-button"
       >
-        1
+        Prev
       </button>
       <span>{page}</span>
       <button
-        disabled={indexOfLastHospital === hospitalDetails.length}
+        disabled={indexOfLastHospital === searchResult.length}
         aria-disabled={disabledNext}
         onClick={() => pagination(page + 1)}
         className="pagination-button"
       >
-        2
+        Next
       </button>
     </div>
   );

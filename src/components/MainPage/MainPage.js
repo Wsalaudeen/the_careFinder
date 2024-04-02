@@ -6,8 +6,30 @@ import HospitalLists from "../HospitalLists/HospitalLists";
 import Users from "../Users/Users";
 import Footer from "../Footer/Footer";
 import { NavLink } from "react-router-dom";
+// import { hospitalDetails } from "../../Data/HospitalDetails";
+import { hospitalDetails } from "../../Data/HospitalDetails";
+import { useState } from "react";
 
-export default function MainPage() {
+export default function MainPage({ searchResult, setSearchResult }) {
+  const [inputValue, setInputValue] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  async function handleSearch() {
+    try {
+      setLoading(true);
+      const dataFetched = await hospitalDetails(inputValue);
+      setSearchResult(dataFetched);
+      setLoading(false);
+
+      console.log(searchResult);
+    } catch (error) {
+      console.error("data not searching:", error);
+    }
+  }
   return (
     <>
       <NavBar />
@@ -15,7 +37,7 @@ export default function MainPage() {
         <div className="map-field">
           <div className="map-figure">
             <iframe
-              class="map-frame"
+              className="map-frame"
               src="https://maps.google.com/maps?width=650&amp;height=500&amp;hl=en&amp;q=Ibadan,%20Nigeria+(CareFinder)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
               width="520"
               height="480"
@@ -37,9 +59,14 @@ export default function MainPage() {
                   className="search"
                   type="text"
                   placeholder=" Your location..."
+                  value={inputValue}
+                  onChange={handleInputChange}
                 />
                 <NavLink to="/hospital-list">
-                  <button className="btn form-btn">Search</button>
+                  {" "}
+                  <button className="btn form-btn" onClick={handleSearch}>
+                    Search
+                  </button>
                 </NavLink>
               </div>
               <p>-or</p>

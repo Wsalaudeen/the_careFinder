@@ -12,16 +12,34 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 import NavBar from "./components/NavBar/NavBar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 export default function App() {
+  const [searchResult, setSearchResult] = useState([]);
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route index element={<MainPage />} />
+          <Route
+            index
+            element={
+              <MainPage
+                searchResult={searchResult}
+                setSearchResult={setSearchResult}
+              />
+            }
+          />
           <Route path="sign-up" element={<SignUpForm />} />
           <Route path="add-hospitals" element={<AddHospitals />} />
-          <Route path="hospital-list" element={<HospitalList />} />
+          <Route
+            path="hospital-list"
+            element={
+              <HospitalList
+                searchResult={searchResult}
+                setSearchResult={setSearchResult}
+              />
+            }
+          />
           <Route path="/log-in" element={<Login />} />
           <Route path="/forgot-password" element={<Forgot />} />
           <Route path="/profile" element={<PrivateRoute />}>

@@ -9,12 +9,12 @@ import HospitalDetail from "./HospitalDetail";
 import "./HospitalList.css";
 import Pagination from "./Pagination";
 
-export default function Hospitalist() {
+export default function Hospitalist({ searchResult }) {
   const [hospitalListPerPage] = useState(3);
   const [page, setPage] = useState(1);
   const indexOfLastHospital = page * hospitalListPerPage;
   const indexOfFirstHospital = indexOfLastHospital - hospitalListPerPage;
-  const presentHospitals = hospitalDetails.slice(
+  const presentHospitals = searchResult.slice(
     indexOfFirstHospital,
     indexOfLastHospital
   );
@@ -36,15 +36,16 @@ export default function Hospitalist() {
       </div>
       <ul className="hospital-list-detail">
         {presentHospitals.map((hospital) => (
-          <HospitalDetail hospitalsData={hospital} key={hospital.id} />
+          <HospitalDetail hospitalsData={hospital} key={hospital.fsq_id} />
         ))}
       </ul>
       <Pagination
         disabledPrev={page === 1}
-        disabledNext={indexOfLastHospital === hospitalDetails.length}
+        disabledNext={indexOfLastHospital === searchResult.length}
         page={page}
         setPage={setPage}
         indexOfLastHospital={indexOfLastHospital}
+        searchResult={searchResult}
       />
       <span>
         <NavLink to="/" className="homepage">
