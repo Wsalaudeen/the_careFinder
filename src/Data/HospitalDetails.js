@@ -108,15 +108,20 @@ export const hospitalDetails = async (search) => {
       }
     );
     console.log(response.data.results);
-    response.data.results.forEach(async (result) => {
-      await addDoc(colRef, {
-        name: result.name,
-      });
+    response.data.results.forEach((result) => {
+      try {
+        addDoc(colRef, {
+          name: result.name,
+          distance: result.distance,
+          location: result.location,
+        });
+      } catch (error) {
+        console.error("data is not fetching:", error);
+      }
     });
     return response.data.results;
   } catch (error) {
     console.error("data is not fetching:", error);
+    throw error;
   }
 };
-
-// hospitalDetails();

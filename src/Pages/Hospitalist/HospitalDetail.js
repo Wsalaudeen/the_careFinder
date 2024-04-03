@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa";
+// import { FaEnvelope, FaInstagram, FaLinkedin } from "react-icons/fa";
+import hospitalImage from "../../Images/mitchellai_com.jpg";
 
 export default function HospitalDetail({ hospitalsData }) {
   return (
@@ -7,19 +8,21 @@ export default function HospitalDetail({ hospitalsData }) {
       <div className="hospital-detail-container">
         <div className="hospital-detail-image">
           <img
-            src={hospitalsData.hospitalImage}
-            alt={hospitalsData.hospitalName}
+            src={hospitalImage}
+            alt="Hospital Image"
             className="hospital-image"
           />
         </div>
         <div className="hospital-details">
-          <h3 className="hospital-detail-name">{hospitalsData.hospitalName}</h3>
-          <p className="hospital-detail-info">{hospitalsData.hospitalInfo}</p>
+          <h3 className="hospital-detail-name">{hospitalsData.name}</h3>
+          <p className="hospital-detail-info">
+            {hospitalsData.location.address}
+          </p>
           <p className="hospital-detail-proximity">
             <span className="hospital-detail-span">🏃</span>
-            {hospitalsData.hospitalProximity}
+            {hospitalsData.distance}
           </p>
-          <span className="hospital-detail-socials">
+          {/* <span className="hospital-detail-socials">
             {hospitalsData.hospitalSocials.instagram && (
               <a
                 href={hospitalsData.hospitalSocials.instagram}
@@ -44,7 +47,7 @@ export default function HospitalDetail({ hospitalsData }) {
                 <FaLinkedin />
               </a>
             )}
-          </span>
+          </span> */}
         </div>
       </div>
     </>
