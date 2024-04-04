@@ -10,6 +10,7 @@ import "./HospitalList.css";
 import Pagination from "./Pagination";
 
 export default function Hospitalist({ searchResult }) {
+  const [loading, setloading] = useState(true);
   const [hospitalListPerPage] = useState(3);
   const [page, setPage] = useState(1);
   const indexOfLastHospital = page * hospitalListPerPage;
@@ -18,6 +19,9 @@ export default function Hospitalist({ searchResult }) {
     indexOfFirstHospital,
     indexOfLastHospital
   );
+  setTimeout(() => {
+    setloading(false);
+  }, 5000);
   return (
     <>
       <NavBar />
@@ -34,25 +38,32 @@ export default function Hospitalist({ searchResult }) {
           <BiDownload className="hospital-list-download" />
         </div>
       </div>
-      <ul className="hospital-list-detail">
-        {presentHospitals.map((hospital) => (
-          <HospitalDetail hospitalsData={hospital} key={hospital.fsq_id} />
-        ))}
-      </ul>
-      <Pagination
-        disabledPrev={page === 1}
-        disabledNext={indexOfLastHospital === searchResult.length}
-        page={page}
-        setPage={setPage}
-        indexOfLastHospital={indexOfLastHospital}
-        searchResult={searchResult}
-      />
-      <span>
-        <NavLink to="/" className="homepage">
-          &larr;
-        </NavLink>
-      </span>
-      <Footer />
+      {loading ? (
+        "loading..."
+      ) : (
+        <div>
+          <ul className="hospital-list-detail">
+            {presentHospitals.map((hospital) => (
+              <HospitalDetail hospitalsData={hospital} key={hospital.fsq_id} />
+            ))}
+          </ul>
+          <Pagination
+            disabledPrev={page === 1}
+            disabledNext={indexOfLastHospital === searchResult.length}
+            page={page}
+            setPage={setPage}
+            indexOfLastHospital={indexOfLastHospital}
+            searchResult={searchResult}
+          />
+          <span>
+            <NavLink to="/" className="homepage">
+              &larr;
+            </NavLink>
+          </span>
+          <Footer />
+        </div>
+      )}
+      ;
     </>
   );
 }

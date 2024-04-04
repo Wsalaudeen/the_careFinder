@@ -29,17 +29,22 @@ export default function App() {
               />
             }
           />
-          <Route path="sign-up" element={<SignUpForm />} />
-          <Route path="add-hospitals" element={<AddHospitals />} />
-          <Route
-            path="hospital-list"
-            element={
-              <HospitalList
-                searchResult={searchResult}
-                setSearchResult={setSearchResult}
-              />
-            }
-          />
+          <Route path="/sign-up" element={<SignUpForm />} />
+          <Route path="/add-hospitals" element={<PrivateRoute />}>
+            <Route path="/add-hospitals" element={<AddHospitals />} />
+          </Route>
+          <Route path="/hospital-list" element={<PrivateRoute />}>
+            <Route
+              path="/hospital-list"
+              element={
+                <HospitalList
+                  searchResult={searchResult}
+                  setSearchResult={setSearchResult}
+                />
+              }
+            />
+          </Route>
+
           <Route path="/log-in" element={<Login />} />
           <Route path="/forgot-password" element={<Forgot />} />
           <Route path="/profile" element={<PrivateRoute />}>

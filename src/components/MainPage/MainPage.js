@@ -61,8 +61,9 @@ export default function MainPage({ searchResult, setSearchResult }) {
                   placeholder=" Your location..."
                   value={inputValue}
                   onChange={handleInputChange}
+                  required
                 />
-                <NavLink to="/hospital-list">
+                <NavLink to={!loading && inputValue ? "hospital-list" : "/"}>
                   {" "}
                   <button className="btn form-btn" onClick={handleSearch}>
                     Search
