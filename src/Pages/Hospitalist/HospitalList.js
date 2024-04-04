@@ -8,6 +8,7 @@ import { hospitalDetails } from "../../Data/HospitalDetails";
 import HospitalDetail from "./HospitalDetail";
 import "./HospitalList.css";
 import Pagination from "./Pagination";
+import { CSVLink } from "react-csv";
 
 export default function Hospitalist({ searchResult }) {
   const [loading, setloading] = useState(true);
@@ -19,6 +20,41 @@ export default function Hospitalist({ searchResult }) {
     indexOfFirstHospital,
     indexOfLastHospital
   );
+
+  const headers = [
+    { label: "Hospital Name", key: "name" },
+    { label: "Hospital Intro", key: "hospitalIntro" },
+    { label: "Hospital Address", key: "results.address" },
+  ];
+
+  const csvReport = {
+    data: searchResult,
+    headers: headers,
+    filename: "Hospitals_Search_Report.csv",
+  };
+
+  const handleDownloadHospitalsData = () => {
+    // Creating a CSV file containing all hospitals information
+    const csvData = searchResult.map((hospital) => ({
+      hospitalName: hospital.name,
+      hospitalIntro: hospital.hospitalIntro,
+      coordinates: hospital.geocodes.main,
+    }));
+
+    // Generate CSV file and trigger download
+    const csvContent = [
+      headers.map((header) => header.label).join(","),
+      ...csvData.map((row) => Object.values(row).join(",")),
+    ].join("\n");
+
+    const encodedUri = encodeURI("data:text/csv;charset=utf-8," + csvContent);
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", csvReport.filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   setTimeout(() => {
     setloading(false);
   }, 5000);
@@ -35,7 +71,13 @@ export default function Hospitalist({ searchResult }) {
         <div className="hospital-list-icons">
           <BiFilter className="hospital-list-filter" />
           <BiShareAlt className="hospital-list-share" />
-          <BiDownload className="hospital-list-download" />
+          <CSVLink {...csvReport}>
+            <BiDownload
+              className="hospital-list-download"
+              onClick={handleDownloadHospitalsData}
+            />
+            ;
+          </CSVLink>
         </div>
       </div>
       {loading ? (
