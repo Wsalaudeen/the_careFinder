@@ -16,7 +16,13 @@ export default function HospitalDetail({ hospitalsData }) {
         <div className="hospital-details">
           <h3 className="hospital-detail-name">{hospitalsData.name}</h3>
           <p className="hospital-detail-info">
-            {hospitalsData.location.address}
+            {hospitalsData.location.formatted_address}
+          </p>
+          <p className="hospital-detail-info">
+            {hospitalsData.location.region}
+          </p>
+          <p className="hospital-detail-info">
+            {hospitalsData.location.country}
           </p>
           <p className="hospital-detail-proximity">
             <span className="hospital-detail-span">🏃</span>
