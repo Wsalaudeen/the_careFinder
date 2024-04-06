@@ -20,7 +20,7 @@ export default function HospitalDetail({ hospitalsData }) {
           </p>
           <p className="hospital-detail-proximity">
             <span className="hospital-detail-span">🏃</span>
-            {hospitalsData.distance}km';
+            {hospitalsData.distance}km
           </p>
           {/* <span className="hospital-detail-socials">
             {hospitalsData.hospitalSocials.instagram && (

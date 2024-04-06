@@ -65,7 +65,7 @@ export default function Hospitalist({ searchResult }) {
       <div className="hospital-list-container">
         <div className="hospital-list-number">
           <p>
-            <span>20</span>&nbsp; facilities found
+            <span>{searchResult.length}</span>&nbsp; facilities found
           </p>
         </div>
         <div className="hospital-list-icons">
