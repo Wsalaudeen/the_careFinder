@@ -28,7 +28,7 @@ function NavBar() {
   const location = useLocation();
   const navigate = useNavigate();
   return (
-    <nav className="navbar">
+    <nav data-testid="navbar1" className="navbar">
       <div className="navbar-container">
         <div className="logo">
           <img src={Logo} alt="carefinder_logo" />
